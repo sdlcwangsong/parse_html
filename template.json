@@ -1,0 +1,132 @@
+{
+    "tf3dm.com":[
+        {
+            "patt":"http://tf3dm.com/3d-model/.*?.html",
+            "type":1,
+            "field":{
+                "author":"a.un",
+                "tags":".side-details-block-tags a",
+                "img":"img.img_ad,src",
+                "publish_time":".date",
+                "download":"window.open\\(\"(.*?)\",regex"
+            }
+        },
+        {
+            "patt":"http://tf3dm.com/3d-models/all[/0-9]*",
+            "type":2,
+            "field":{
+                "link":".model-link a,href;.pagg_btn,href"
+            }
+        }
+    ],
+    "3dxia.com":[
+        {
+            "patt":"http://www.3dxia.com/3dmoxing/[0-9]+.html",
+            "type":1,
+            "field":{
+                "title":".lm-mc",
+                "keyword":".lm-nr",
+                "desc":".ny-02",
+                "img":".ny-03 img,src"
+            }
+        },
+        {
+            "patt":"http://www.3dxia.com/3dmoxing/[a-z]+/index_[0-9]+.html",
+            "type":2,
+            "field":{
+                "link":"table.tpbt tbody tr td a,href"
+            }
+        }
+    ],
+    "3dmodelfree.com":[
+        {
+            "patt":"http://www.3dmodelfree.com/models/[0-9]+-[0-9]+.htm",
+            "type":1,
+            "field":{
+                "title":"div h2 b",
+                "keyword":"<p align=\"center\">Keywords:(.*?)</p>,regex",
+                "img":"img[src*=\"/imguploads/Image/\"],src",
+                "download":"a[href^=\"http://down.3dmodelfree.com\"],href"
+            }
+        },
+        {
+            "patt":"http://www.3dmodelfree.com/3dmodel/list[0-9]+-[0-9]+.htm",
+            "type":2,
+            "field":{
+                "link":"a[href^=\"http://www.3dmodelfree.com/models/\"],href"
+            }
+        }
+    ],
+    "mohou.com":[
+        {
+            "patt":"http://www.mohou.com/models/model-[0-9]+.html",
+            "type":1,
+            "field":{
+                "author":".h1_title",
+                "publish_time":".lg_mx_info",
+                "img":"#imgbox img,src",
+                "desc":"#descriptionMore",
+                "tags":".label a span",
+                "download":"a[model^=\"http://api.mohou.com/mohou/\"],model"
+            }
+        },
+        {
+            "patt":"http://www.mohou.com/models/hot/[0-9]+",
+            "type":2,
+            "field":{
+                "link":".citemtop a,href"
+            }
+        }
+    ],
+    "sketchfab.com":[
+        {
+            "patt":"https://sketchfab.com/models/[a-z]+",
+            "type":1,
+            "field":{
+                "author":".username-wrapper",
+                "desc":".description",
+                "publish_time":".model-meta-info time,datetime",
+                "tags":".tags"
+            }
+        },
+        {
+            "patt":"https://sketchfab.com/models/categories/.*?likeCount&page=[0-9]+",
+            "type":2,
+            "field":{
+                "link":"a.model-card-filter,href"
+            }
+        }
+    ],
+    "dayin.la":[
+        {
+            "patt":"http://www.dayin.la/product/[0-9]+.html",
+            "type":1,
+            "field":{
+                "title":".dyl-view-title",
+                "img":".load-delay,src",
+                "author":".dyl-view-author",
+                "download":".info-footer a,href"
+            }
+        },
+        {
+            "patt":"http://www.dayin.la/products.html.*?page=[0-9]+.*?category-p[0-9]+",
+            "type":2,
+            "field":{
+                "link":".dayin-box-link,href"
+            }
+        }
+    ],
+    "myminifactory.com":[
+        {
+            "patt":"https://www.myminifactory.com/cn/object/.*?$",
+            "type":1,
+            "field":{
+                "title":".store-maininfo h1",
+                "desc":".autolinker",
+                "tags":".listoftags",
+                "img":"background:url\\('(.*?)',regex",
+                "download":"#mymini_userinterfacebundle_download_submit,action"
+            }
+        }
+    ]
+}
