@@ -127,6 +127,30 @@
                 "img":"background:url\\('(.*?)',regex",
                 "download":"#mymini_userinterfacebundle_download_submit,action"
             }
+        },
+        {
+            "patt":"https://www.myminifactory.com/cn/category/fetch_category/.*?page=[0-9]+$",
+            "type":2,
+            "field":{
+                "link":".result a,href"
+            }
+        }
+    ],
+    "tinkercad.com":[
+        {
+            "patt":"https://www.tinkercad.com/things/\\?page=[0-9]+$",
+            "type":2,
+            "field":{
+                "link":"a.permalink,href"
+            }
+        },
+        {
+            "patt":"https://www.tinkercad.com/things/.*?$",
+            "type":1,
+            "field":{
+                "title":"#thing-cover h2",
+                "download":"#download-3d-print,href"
+            }
         }
     ]
 }

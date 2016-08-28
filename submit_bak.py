@@ -8,7 +8,7 @@ import os,time
 #task = [{"name": name, "data": {key: value}, "retry": 3}]
 
 
-task = [{"name": "link","data": {"link" : "https://www.myminifactory.com/cn/object/v-c-streamline-circle-robot-18893"},"retry":3,"savefile":"true"}]
+task = [{"name": "tinkercad","data": {"link" : "https://www.tinkercad.com/things/jKdHxIbCgv8-because-no-one-likes-cats/"},"retry":3,"savefile":"true"}]
 
 data = {"tasks": json.dumps(task)}
 
