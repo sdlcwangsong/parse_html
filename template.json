@@ -152,5 +152,23 @@
                 "download":"#download-3d-print,href"
             }
         }
+    ],
+    "fuiure.com":[
+        {
+            "patt":"http://www.fuiure.com/plus/list-[0-9]+-[0-9]+.html",
+            "type":2,
+            "field":{
+                "link":".jptj_list_img a,href"
+            }
+        },
+        {
+            "patt":"http://www.fuiure.com/detail-[0-9]+.html",
+            "type":1,
+            "field":{
+                "title":".cdb_right_title",
+                "author":".design_name",
+                "desc":"div:contains(模型简介)"
+            }
+        }
     ]
 }

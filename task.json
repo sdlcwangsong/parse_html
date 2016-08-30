@@ -1,0 +1,427 @@
+{
+    "zhihu":{
+        "link":"{{.link}}",
+        "method":"GET",
+        "tags":["zhihu"],
+        "headers":{
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:44.0) Gecko/20100101 Firefox/44.0",
+            "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language":"zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3",
+            "Connection":"keep-alive",
+            "Cookie":"q_c1=f8465c96cbf646e5bf9c8481c16b9854|1456215827000|1456215827000; cap_id=\"OThkMGM4MWFlNWUxNGNjNzlhZWVlNDMyMTFmOGY5ZmY=|1456803837|fc45e34887c4e15e057f2e2b0a2f3211a1d47775\"; _za=46077534-bc21-434c-b325-defa737e3045; __utma=51854390.1486295871.1456215831.1456803847.1456816723.7; __utmz=51854390.1456215831.1.1.utmcsr=sogou|utmccn=(organic)|utmcmd=organic|utmctr=%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0; __utmv=51854390.100-1|2=registration_date=20131013=1^3=entry_date=20131013=1; _xsrf=374287e9dda8f85d2d2f8ebd4ed71736; n_c=1; __utmc=51854390; z_c0=\"QUFEQXl5Z2ZBQUFYQUFBQVlRSlZUVEtUX0ZhZWoxRmo4R3RSUWJxeUt4NUVCRnF0dk9hbFBBPT0=|1456801330|0bd40396e221062e5306fa63bc448c17e398ddbd\"; __utmb=51854390.14.10.1456816723; __utmt=1",
+            "Host":"www.zhihu.com"        
+        }
+    },
+    "p2peye":{
+        "link":"{{.link}}",
+        "method":"GET",
+        "tags":["p2peye"],
+        "headers":{
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:44.0) Gecko/20100101 Firefox/44.0",
+            "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language":"zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3",
+            "Connection":"keep-alive",
+            "Cookie":"Hm_lvt_556481319fcc744485a7d4122cb86ca7=1456213755; TYID=enANiFae9+Sw+w3nBBHaAg==; __jsluid=5bd93cc9a0e91c2908326c792ff1eb37; __jsl_clearance=1456213748.802|0|%2BXHnNvyxzEP9q74kIbISe%2F9DnC4%3D; A4gK_987c_saltkey=dX7HcnXI; A4gK_987c_lastvisit=1456210150; A4gK_987c_lastact=1456213997%09portal.php%09view; A4gK_987c_sendmail=1; Hm_lpvt_556481319fcc744485a7d4122cb86ca7=1456214001",
+            "Host":"news.p2peye.com"        
+        }
+    },
+    "alizs_price":{
+        "link":"http://index.1688.com/alizs/attr/price.json",
+        "method":"POST",
+        "tags":["alizs_price"],
+        "params":{
+            "cat":"{{.cat}}",
+            "mianliao":"all",
+            "userType":"supplier"
+        },
+        "ignore_filter": true,
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+        }
+    },
+    "taobao_shop": {
+        "link": "https://shopsearch.taobao.com/search?app=shopsearch&q={{.query}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Referer": "https://www.taobao.com/",
+            "Host": "www.taobao.com"
+        },
+        "tags":["taobao_shop"],
+        "redirect_block": "http",
+        "timeout": 20,
+        "block_timeout": 600
+    },
+    "baidu": {
+        "link": "http://www.baidu.com/s?wd={{.query}}",
+        "cookies": {
+            "BAIDUID": "F366D3840EDC15DD1A0D696361B3013E:SL=0:NR=50:FG=1"
+        },
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Referer": "https://www.baidu.com/",
+            "Host": "www.baidu.com"
+        },
+        "tags":["baidu"],
+        "redirect_block": "verify.baidu.com",
+        "timeout": 3,
+        "block_legth": 5000,
+        "block_timeout": 600
+    },
+	 "baidu_tieba": {
+        "link": "http://tieba.baidu.com/f/search/res?ie=utf-8&qw={{.query}}",
+        "cookies": {
+            "BAIDUID": "F366D3840EDC15DD1A0D696361B3013E:SL=0:NR=50:FG=1"
+        },
+        "tags":["baidu_tieba"],
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Referer": "https://www.baidu.com/",
+            "Host": "www.baidu.com"
+        },
+        "redirect_block": "verify.baidu.com",
+        "timeout": 3,
+        "block_timeout": 600
+    },
+    "mobilebaidutieba": {
+        "link": "http://tieba.baidu.com/mo/q/m?word={{.query}}&page_from_search=index&tn6=bdISP&tn4=bdKSW&tn7=bdPSB&lm=16842752&lp=6093&sub4=%E8%BF%9B%E5%90%A7&pn=0&",
+        "cookies": {
+            "BAIDUID": "BAIDUID=22616DB336E22F43D4AE42C277F3BDFB:SL=0:NR=50:FG=1"
+        },
+        "tags":["mobilebaidu"],
+        "headers": {
+            "User-Agent": "JUC (Linux; U; 2.3.7; zh-cn; MB200; 320*480) UCWEB7.9.3.103/139/999",
+            "Referer": "https://www.baidu.com/",
+            "Host": "www.baidu.com"
+        },
+        "redirect_block": "verify.baidu.com",
+        "timeout": 5,
+        "block_timeout": 600
+    },
+    "haosou": {
+        "link": "http://www.haosou.com/s?q={{.query}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Host": "www.haosou.com"
+        },
+        "tags":["haosou"],
+        "block": [
+            "请输入以下验证码继续使用好搜"
+        ],
+        "block_timeout": 600
+    },
+    "58" : {
+        "link": "http://{{.city}}.58.com/sou/?key={{.query}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Host": "{{.city}}.58.com"
+        },
+        "tags":["58"],
+        "redirect_block": "support.58.com/firewall",
+        "timeout": 240,
+        "block_timeout": 600
+    },
+    "1688": {
+        "link": "{{.link}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Host": "s.1688.com"
+        },
+        "tags":["1688"],
+        "redirect_block": "login.1688.com",
+        "block_timeout": 600
+    },
+    "weibo": {
+        "link": "{{.link}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Host": "weibo.com"
+        },
+        "tags":["weibo"],
+        "redirect_block": "passport.weibo.com/v",
+        "need_cookie": true,
+        "block_timeout": 600
+    },
+    "zhiyezigezheng": {
+        "link": "http://zscx.osta.org.cn/jiandingApp/command/buzhongxin/ecCertSearchAll?tableName=CERT_T&tableName1=000000&CID={{.id_number}}&CertificateID=&PortID=&Name={{.name}}&province=-1&x=21&y=44",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Host": "zscx.osta.org.cn",
+            "Referer": "http://zscx.osta.org.cn/"
+        },
+        "tags":["zhiyezigezheng"],
+        "redirect_block": "zscx.nvq.net.cn",
+        "block_timeout": 600
+    },
+    "link": {
+        "link": "{{.link}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36"
+        },
+        "block_status": [403, 500, 400],
+		"tags": ["link"],
+        "redirect_block": "http",
+        "block_timeout": 600
+    },
+    "nofilter_link": {
+        "link": "{{.link}}",
+        "headers": {
+        	"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36"
+        },
+        "cookies": {
+            "BAIDUID": "F366D3840EDC15DD1A0D696361B3013E:SL=0:NR=50:FG=1"
+        },
+        "tags":["nofilter_link"],
+        "block_status": [403, 500, 400],
+        "ignore_filter": true,
+        "redirect_block": "http",
+        "block_timeout": 600
+    },
+	"nofilter_link_mobile": {
+        "link": "{{.link}}",
+        "headers": {
+        	"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13C75 Safari/601"
+        },
+        "tags":["nofilter_link_mobile"],
+        "block_status": [403, 500, 400],
+        "ignore_filter": true,
+        "redirect_block": "http",
+        "block_timeout": 600
+    },
+    "shangtongdailink": {
+        "link": "{{.link}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36"
+        },
+        "tags":["shangtongdailink"],
+        "block_status": [403, 500, 400],
+        "block_timeout": 600
+    },
+    "baixing": {
+	    "link": "http://{{.city}}.baixing.com/root/?query={{.query}}",
+	    "headers": {
+	        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+	        "Host": "{{.city}}.baixing.com"
+	    },
+        "tags":["baixing"],
+	    "timeout": 30
+        },
+    "ganji":{
+	    "link": "http://{{.city}}.ganji.com/site/s/_{{.query}}/",
+	    "headers":{
+	        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+	        "Host": "{{.city}}.ganji.com"
+	    },
+        "tags":["ganji"],
+        "redirect_block": "http",
+	    "timeout": 30
+    },
+    "zhixing": {
+        "disable": false,
+        "link": "https://authcrawler.yixin.com/submit?tmpl=zhixing&cid={{.query}}",
+        "headers":{
+	        "User-Agent": "YisouCrawler"
+	    },
+        "tags":["zhixing"],
+        "timeout": 10,
+        "termite_data_key": "data",
+        "real_url": "http://zhixing.court.gov.cn/search/detail?id={{.id}}"
+    },
+    "shixin": {
+        "disable": false,
+        "link": "https://authcrawler.yixin.com/submit?tmpl=shixin&cid={{.query}}&name={{.name}}",
+        "headers":{
+	        "User-Agent": "YisouCrawler"
+	    },
+        "tags":["shixin"],
+        "timeout": 10,
+        "termite_data_key": "shixin",
+        "real_url": "http://shixin.court.gov.cn/findDetai?id={{.id}}&pCode=1347"
+    },
+	"qqprofile":{
+		"link": "http://base.s6.qzone.qq.com/cgi-bin/user/cgi_userinfo_get_all?uin={{.query}}&vuin=201843188&rd=0.3724780201512549&format=json",
+		"headers":{
+			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+			"Host": "user.qzone.qq.com"
+		},
+		"timeout": 30,
+		"tags" : ["qq"],
+		"need_cookie": true,
+		"need_handle": true,
+		"pattern": "_Callback\\((.*?)\\)"
+	},
+	"qqdt":{
+		"link": "http://ic2.s8.qzone.qq.com/cgi-bin/feeds/feeds_html_module?i_uin={{.query}}&i_login_uin=201843188&previewV8=1&style=2&version=8&needDelOpr=true&format=json",
+		"headers":{
+			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+			"Host": "user.qzone.qq.com"
+		},
+		"timeout": 30,
+		"tags" : ["qq"],
+		"need_cookie": false
+	},
+	"qqxc":{
+		"link": "http://user.qzone.qq.com/p/alist.photo/fcgi-bin/fcg_list_album_v3?t=324772146&hostUin={{.query}}&uin=201843188&appid=4&inCharset=utf-8&outCharset=utf-8&source=qzone&plat=qzone&format=json&notice=0&filter=1&handset=4&pageNumModeSort=40&pageNumModeClass=15&needUserInfo=1&idcNum=0&callbackFun=shine0",
+		"headers":{
+			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+			"Host": "user.qzone.qq.com"
+		},
+		"timeout": 30,
+		"tags" : ["qq"],
+		"need_cookie": true
+	},
+	"qqss":{
+		"link": "http://taotao.qq.com/cgi-bin/emotion_cgi_msglist_v6?uin={{.query}}&inCharset=utf-8&outCharset=utf-8&hostUin=201843188&notice=0&sort=0&pos=20&num=20&cgi_host=http%3A%2F%2Ftaotao.qq.com%2Fcgi-bin%2Femotion_cgi_msglist_v6&code_version=1&format=json&need_private_comment=1",
+		"headers":{
+			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+			"Host": "user.qzone.qq.com"
+		},
+		"timeout": 30,
+		"tags" : ["qq"],
+		"need_cookie": true
+	},
+	"qqrz":{
+		"link": "http://user.qzone.qq.com/p/b1.cnc/cgi-bin/blognew/get_abs?hostUin={{.query}}&uin=201843188&blogType=0&statYear=2015&reqInfo=5&pos=0&num=100&absType=0&format=json&source=0&rand=0.9384088212873212",
+		"headers":{
+			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/41.0",
+			"Host": "user.qzone.qq.com"
+		},
+		"timeout": 30,
+		"tags" : ["qq"],
+		"need_cookie": true
+	},
+	"qqzccsrs":{
+		"link": "http://user.qzone.qq.com/p/r/cgi-bin/main_page_cgi?uin={{.query}}&param=3_814979711_0%7C8_8_201843188_0_1_0_0_1%7C15%7C16&format=json",
+		"headers":{
+			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+			"Host": "user.qzone.qq.com"
+		},
+		"timeout": 30,
+		"tags" : ["qq"],
+		"need_cookie": true,
+		"need_handle": true,
+		"pattern": "_Callback\\((.*?)\\)"
+	},
+	"qqxa":{
+		"link": "http://page.qq.com/cgi-bin/profile/interest_get?uin={{.query}}&vuin=201843188&flag=1&rd=0.020993586945732834&fupdate=1",
+		"headers":{
+			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+			"Host": "user.qzone.qq.com"
+		},
+		"timeout": 30,
+		"tags" : ["qq"],
+		"need_cookie": true,
+		"need_handle": true,
+		"pattern": "_Callback\\((.*?)\\)"
+	},
+	"zw_toumi": {
+        "link": "{{.link}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+			"Referer": "http://www.itoumi.com/bxt/index.html"
+        },
+        "tags" : ["zw_toumi"],
+        "block_status": [403, 500, 400],
+		"block": ["此页无法显示"],
+        "redirect_block": "http",
+        "block_timeout": 600
+    },
+	"zw_lantouzi": {
+        "link": "{{.link}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+			"Referer": "https://lantouzi.com/?android"
+        },
+        "tags" : ["zw_lantouzi"],
+        "block_status": [403, 500, 400],
+        "redirect_block": "http",
+        "block_timeout": 600
+    },
+    "kaitao": {
+        "link": "{{.link}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Cookie":"JSESSIONID=E5D162FBE98316060EDCB2FDD18C5647; Hm_lvt_8487a876852d71d00f1a3098adffe414=1458202659; Hm_lpvt_8487a876852d71d00f1a3098adffe414=1458202659; CNZZDATA1000244608=1522154567-1458199457-%7C1458199457; bdshare_firstime=1458202660154"
+        },
+        "tags" : ["kaitao"],
+        "block_timeout": 600
+    },
+    "100ec": {
+        "link": "{{.link}}",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "Cookie":"__cfduid=d4b9b5f6b17adf8613fc9fc23178c23a11461650444; Hm_lvt_391463b2f5191d59ba3a10fe66bbd394=1461650446,1463110638,1463625935; cf_clearance=5e2797be4baa053a5c10b50c88af114540795e3f-1463625926-1800; Hm_lpvt_391463b2f5191d59ba3a10fe66bbd394=1463625935"
+        },
+        "tags" : ["100ec"],
+        "block_timeout": 600
+    },
+    "guojiazhengshu": {
+        "link": "http://zscx.osta.org.cn/jiandingApp/command/buzhongxin/ecCertSearchAll?tableName=CERT_T&tableName1=000000&CID={{.id}}&CertificateID=&PortID=&Name={{.name}}&province=-1&x=53&y=26",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "Cookie":"JSESSIONID=79C441FF17D0F7198D8658B79F173C2A; lzstat_uv=15982373851897476636|21477@1172566@811656; lzstat_ss=3145136446_0_1466767444_21477|3547920077_0_1466767554_1172566|2161024348_5_1466767838_811656",
+            "Referer":"http://zscx.osta.org.cn/",
+            "Host":"zscx.osta.org.cn"
+        },
+        "tags" : ["zscx"],
+        "block_timeout": 600
+    },
+    "guojizhengshu": {
+        "link": "http://zscx.osta.org.cn/jiandingApp/command/guojizhengshu/ecCertSearchAll?province=guojizhengshu&templetId=guojizhengshu&async=true&Name={{.name}}&CID={{.id}}&CertificateID=&x=36&y=10",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "Cookie":"JSESSIONID=79C441FF17D0F7198D8658B79F173C2A; lzstat_uv=15982373851897476636|21477@1172566@811656@1172571@1172569@1172568; lzstat_ss=3145136446_0_1466767444_21477|3547920077_2_1466768458_1172566|2161024348_13_1466768558_811656|2898993775_2_1466768788_1172571|456991539_0_1466768404_1172569|3593961510_0_1466768404_1172568",
+            "Referer":"http://zscx.osta.org.cn/",
+            "Host":"zscx.osta.org.cn"
+        },
+        "tags" : ["zscx"],
+        "block_timeout": 600
+    },
+    "nengliceping": {
+        "link": "http://zscx.osta.org.cn/jiandingApp/command/nengliceping/ecCertSearchAll?province=nengliceping&templetId=nengliceping&async=true&Name={{.name}}&CID={{.id}}&CertificateID=&x=32&y=14",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "Cookie":"JSESSIONID=79C441FF17D0F7198D8658B79F173C2A; lzstat_uv=15982373851897476636|21477@1172566@811656@1172571@1172569@1172568; lzstat_ss=3145136446_0_1466767444_21477|3547920077_3_1466768982_1172566|2161024348_14_1466768914_811656|2898993775_2_1466768788_1172571|456991539_0_1466768404_1172569|3593961510_0_1466768404_1172568",
+            "Referer":"http://zscx.osta.org.cn/",
+            "Host":"zscx.osta.org.cn"
+        },
+        "tags" : ["zscx"],
+        "block_timeout": 600
+    },
+    "jsjgaoxinjishu": {
+        "link": "http://zscx.osta.org.cn/jiandingApp/command/gaoxinzhengshu/ecCertSearchAll?province=gaoxinjishu&templetId=gaoxinjishu&async=true&Name={{.name}}&CID={{.id}}&CertificateID=&x=31&y=16",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "Cookie":"JSESSIONID=79C441FF17D0F7198D8658B79F173C2A; lzstat_uv=15982373851897476636|21477@1172566@811656@1172571@1172569@1172568; lzstat_ss=3145136446_0_1466767444_21477|3547920077_3_1466768982_1172566|2161024348_14_1466768914_811656|2898993775_2_1466768788_1172571|456991539_0_1466768404_1172569|3593961510_0_1466768404_1172568",
+            "Referer":"http://zscx.osta.org.cn/",
+            "Host":"zscx.osta.org.cn"
+        },
+        "tags" : ["zscx"],
+        "block_timeout": 600
+    },
+    "zhuanxiangnengli": {
+        "link": "http://zscx.osta.org.cn/jiandingApp/command/zhuanxiangnengli/ecCertSearchAll?province=zhuanxiangnengli&templetId=nengliceping&async=true&Name={{.name}}&CID={{.id}}&CertificateID=&x=50&y=12",
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "Cookie":"JSESSIONID=79C441FF17D0F7198D8658B79F173C2A; lzstat_uv=15982373851897476636|21477@1172566@811656@1172571@1172569@1172568; lzstat_ss=3145136446_0_1466767444_21477|3547920077_3_1466768982_1172566|2161024348_14_1466768914_811656|2898993775_2_1466768788_1172571|456991539_2_1466769137_1172569|3593961510_1_1466769127_1172568",
+            "Referer":"http://zscx.osta.org.cn/",
+            "Host":"zscx.osta.org.cn"
+        },
+        "tags" : ["zscx"],
+        "block_timeout": 600
+    },
+    "dayin":{
+        "link":"{{.link}}",
+        "headers":{
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "Cookie":"clang=zh_cn; PHPSESSID=3nuqfdpib0m9h168ld3jqjn951; account=2f08f2d3b10c9acbbdb8e9f9ebf1fcb3fdd44931a%3A4%3A%7Bi%3A0%3Bs%3A5%3A%2240843%22%3Bi%3A1%3Bs%3A11%3A%2210000047702%22%3Bi%3A2%3Bi%3A2592000%3Bi%3A3%3Ba%3A1%3A%7Bs%3A3%3A%22uid%22%3Bs%3A5%3A%2247702%22%3B%7D%7D; dayinlauuid=9c810289-0b97-37e1-79d4-c36d5f21c2d7; Hm_lvt_053d0f7d57d6450f5af6fa823c9e1b15=1471762090; Hm_lpvt_053d0f7d57d6450f5af6fa823c9e1b15=1471764299"
+        }
+    },
+    "tinkercad":{
+        "link":"{{.link}}",
+        "headers":{
+            "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0",
+            "Cookie":"pgrp=9; euid=1mz2fna38vpqf; SERVERID=ws2; optimizelyEndUserId=oeu1472351098747r0.9969627675303323; VSID=b545883cb2aacb68978b1b0f3cbb48cf; mhcheck=1; conv1fun0=1472351822425|4; __utmt=1; login_next=/verification/; 1283tc46795=1472353060406; SID=aba8c99f5d69b932921c00264a8fb7b8; LSID=80bd287d2ecd05d34d27cfee9221b5547c176bdf; ajs_anonymous_id=%229a5b3510-55d9-46f0-bd14-35b7649b7a2d%22; optimizelySegments=%7B%223317570667%22%3A%22referral%22%2C%223324030450%22%3A%22false%22%2C%223334380335%22%3A%22gc%22%2C%223356380322%22%3A%22none%22%7D; optimizelyBuckets=%7B%225380711661%22%3A%225418460095%22%7D; __utma=259940111.44327746.1472351100.1472351100.1472351100.1; __utmb=259940111.53.7.1472353092914; __utmc=259940111; __utmz=259940111.1472351100.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); ajs_user_id=%222mkq9bwfes8s3%22; ajs_group_id=null; optimizelyPendingLogEvents=%5B%5D; mp_mixpanel__c=0; mp_36746f3bbd808122da0d984449eedd13_mixpanel=%7B%22distinct_id%22%3A%20%22156cef6df8454a-013c8ebbc50532-37637900-fa000-156cef6df857ba%22%2C%22mp_lib%22%3A%20%22Segment%3A%20web%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22pseudoGroup%22%3A%209%2C%22__alias%22%3A%20%222mkq9bwfes8s3%22%2C%22mp_name_tag%22%3A%20%22418676758%40qq.com%22%2C%22%24created%22%3A%20%222016-08-28T02%3A57%3A45.000Z%22%2C%22%24last_login%22%3A%20%222016-08-28T02%3A57%3A45.000Z%22%2C%22%24name%22%3A%20%22418676758%40qq.com%22%2C%22plan%22%3A%20%22Free%22%2C%22plan_id%22%3A%2011%2C%22referrer%22%3A%20%22%22%2C%22team_id%22%3A%20null%2C%22team_role%22%3A%20null%2C%22user_id%22%3A%20%225N2uPTPxR0a%22%2C%22id%22%3A%20%222mkq9bwfes8s3%22%2C%22%24first_name%22%3A%20%22418676758%40qq.com%22%2C%22%24email%22%3A%20%22418676758%40qq.com%22%7D; visid=2579b1d310b006d51a422e0303bd9055b36792c5:%7B%22n%22%3A3%2C%22b%22%3A1472351093197823471%2C%22s%22%3A3%7D"    
+        }
+    }
+}
+

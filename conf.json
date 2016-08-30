@@ -1,0 +1,6 @@
+{
+    "template_path": "task.json",
+    "pagestat_host": "http://yisou:85ef08d139@es.bdp.cc/",
+    "cluster_api": "http://127.0.0.1:8097/submit",
+    "page_stat_name": "yisou_page_stat_"
+}
