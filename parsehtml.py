@@ -49,6 +49,8 @@ class Extract(object):
                
     def extractor(self):
         filename = "/Users/ws/GoCode/bin/pages/" + str(time.strftime('%Y%m%d%H'))
+        filename_out = "output/" + str(time.strftime('%Y%m%d%H')) + ".json"
+        f_w = open(filename_out, "w")
         for html in open(filename,'r').readlines():
             html = html.split('\t')
             template = self.templates[self.get_domain(html[1])]
@@ -59,10 +61,16 @@ class Extract(object):
                     continue
                 soup = BeautifulSoup(html[2],"html.parser")
                 if temp["type"] == 1:
-                    
+                    content = {}
                     for k, v in temp["field"].items():
-                       rets = self.soup_select(soup, k, v, html) 
-                       print (rets) 
+                        
+                        rets = self.soup_select(soup, k, v, html) 
+                        if len(rets)>0:
+                            content[k] = rets[0]
+                       
+                        print (k,":", rets[0]) 
+                    content["url"] = html[1]
+                    f_w.write(json.dumps(content,ensure_ascii=False))
                 elif temp["type"] == 2:
                     p = self.redis.redis.pipeline()
                     for k, v in temp["field"].items():

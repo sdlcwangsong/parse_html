@@ -109,10 +109,10 @@
             }
         },
         {
-            "patt":"http://www.dayin.la/products.html.*?page=[0-9]+.*?category-p[0-9]+",
+            "patt":"http://www.dayin.la/products.html.*?page=[0-9]+",
             "type":2,
             "field":{
-                "link":".dayin-box-link,href"
+                "link":".dayin-box-image,href"
             }
         }
     ],
